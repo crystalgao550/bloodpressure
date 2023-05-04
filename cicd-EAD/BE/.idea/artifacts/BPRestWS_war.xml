@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="BPRestWS:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>BPRestWS</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="BPRestWS-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="BPRestWS:war exploded" />
+    </root>
+  </artifact>
+</component>
