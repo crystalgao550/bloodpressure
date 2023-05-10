@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- None
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSource: 'spec'
+    versionSpec: '6.x'
+  displayName: 'Installing nodejs as a pre-requiste for unittest'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'kanolanacr'
+    repository: 'nodejs-server'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+  displayName: 'Build and push FE image'
+- task: CmdLine@2
+  inputs:
+    script: 'sed -i ''s/latest/$(Build.BuildId)/g'' create-nodejs-service-manifest.yaml'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'create-nodejs-service-manifest.yaml'
+    ArtifactName: 'YAML'
+    publishLocation: 'Container'
