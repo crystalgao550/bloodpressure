@@ -13,7 +13,7 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build image
+  displayName: Build FE-image
   jobs:
   - job: Build
     displayName: Build-FE-CI
@@ -26,4 +26,20 @@ stages:
         repository: 'saturdaystar/bp-fe'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/FE/Dockerfile'
+        tags: '$(tag)'
+
+- stage: Build
+  displayName: Build BE-image
+  jobs:
+  - job: Build
+    displayName: Build-BE-CI
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'DockHub'
+        repository: 'saturdaystar/bpbe'
+        command: 'buildAndPush'
+        Dockerfile: '$(Build.SourcesDirectory)/BE/Dockerfile'
         tags: '$(tag)'
