@@ -25,5 +25,5 @@ stages:
         containerRegistry: 'DockHub'
         repository: 'saturdaystar/bp-fe'
         command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/cicd-EAD/FE/Dockerfile'
+        Dockerfile: '$(Build.SourcesDirectory)/FE/Dockerfile'
         tags: '$(tag)'
