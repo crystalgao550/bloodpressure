@@ -12,7 +12,7 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
-- stage: Build
+- stage: BuildFE
   displayName: Build FE-image
   jobs:
   - job: Build
@@ -28,7 +28,7 @@ stages:
         Dockerfile: '$(Build.SourcesDirectory)/FE/Dockerfile'
         tags: '$(tag)'
 
-- stage: Build
+- stage: BuildBE
   displayName: Build BE-image
   jobs:
   - job: Build
