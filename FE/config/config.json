@@ -4,8 +4,8 @@
         "app_name": "BP Category Calculator",
         "database": "mongodb://admin:123456@mongo:27017/?authMechanism=DEFAULT",
 		"database_name": "bpdb",
-		"database_collection": "customers",
-		"webservice": "http://(becontainername):8080/BPRestWS-1.0-SNAPSHOT/retrieve/bp/getJson/", 
+		"database_collection": "bpdb",
+		"webservice": "http://bp-fe:8080/BPRestWS-1.0-SNAPSHOT/retrieve/bp/getJson/", 
 		"exposedPort": "22137"
 	}
 }
