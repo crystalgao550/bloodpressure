@@ -39,7 +39,7 @@ stages:
     - task: Maven@4
       displayName: 'Build WAR file'
       inputs:
-        mavenPomFile: '(Build.SourcesDirectory)/BE/pom.xml'
+        mavenPomFile: '$(Build.SourcesDirectory)/BE/pom.xml'
         goals: 'clean package'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
