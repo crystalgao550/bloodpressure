@@ -28,18 +28,30 @@ stages:
         Dockerfile: '$(Build.SourcesDirectory)/FE/Dockerfile'
         tags: '$(tag)'
 
-- stage: BuildBE
-  displayName: Build BE-image
+- stage: Build VAR file
+  displayName: Build VAR file
   jobs:
-  - job: Build
-    displayName: Build-BE-CI
+  - job: Build-VAR-file
+    displayName: Build VAR file
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: Maven@4
+      displayName: 'Build WAR file'
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'clean package'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
     - task: Docker@2
       inputs:
         containerRegistry: 'DockHub'
         repository: 'saturdaystar/bpbe'
         command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/BE/Dockerfile'
+        Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
