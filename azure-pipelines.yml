@@ -28,11 +28,11 @@ stages:
         Dockerfile: '$(Build.SourcesDirectory)/FE/Dockerfile'
         tags: '$(tag)'
 
-- stage: Build VAR file
-  displayName: Build VAR file
+- stage: BuildBE
+  displayName: Build BE
   jobs:
-  - job: Build-VAR-file
-    displayName: Build VAR file
+  - job: Build_WAR
+    displayName: Build WAR file
     pool:
       vmImage: ubuntu-latest
     steps:
