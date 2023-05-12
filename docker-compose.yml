@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  bpbe:
+    image: ${DOCKER_REGISTRY-}bpbe
+    build:
+      context: .
+      dockerfile: $(Build.SourcesDirectory)/BE/Dockerfile
+
+  bpfe:
+    image: ${DOCKER_REGISTRY-}bp-fe
+    build:
+      context: .
+      dockerfile: $(Build.SourcesDirectory)/FE/Dockerfile
+
+  bp.db:
+    image: mongo

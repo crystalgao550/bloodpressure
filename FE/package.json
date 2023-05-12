@@ -2,7 +2,7 @@
   "name": "bp_web_app",
   "version": "1.0.0",
   "description": "BP Node.js FE for Docker",
-  "author": "Karen Nolan <karen.nolan@it-tallaght.ie>",
+  "author": "Qixin Lu <qlu@mytudublin.ie>",
   "main": "fe-server.js",
   "scripts": {
     "start": "node fe-server.js"
