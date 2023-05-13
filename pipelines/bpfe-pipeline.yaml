@@ -53,7 +53,7 @@ stages:
 
 - stage: Deploy
   displayName: Deploy stage
-  dependsOn: Build
+  dependsOn: BuildFE
 
   jobs:
   - deployment: Deploy
