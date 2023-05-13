@@ -8,7 +8,7 @@ trigger:
       - main
     paths:
       include:
-      - EAD-CA/FE/*
+      - EAD/FE/*
       - manifests/bpfe.yaml
 
 resources:
