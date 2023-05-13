@@ -29,7 +29,7 @@ spec:
           protocol: TCP 
         - containerPort: 4848
           name: http2
-          protocol: TCP                         
+          protocol: TCP                       
 ---
 apiVersion: v1
 kind: Service
