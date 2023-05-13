@@ -10,6 +10,7 @@ trigger:
       include:
       - EAD/FE/*
       - EAD/manifests/bpfe.yaml
+      - EAD/pipelines/bpfe-pipeline.yaml
 
 resources:
 - repo: self
