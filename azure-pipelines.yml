@@ -12,9 +12,9 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'a9348dcc-8123-41cb-af8d-500e3667eae4'
-  imageRepository: 'bpbe'
+  imageRepository: 'saturdaystar/bpbe'
   containerRegistry: 'bpacregistry.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/BE'
+  dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'bpacregistry6600aec6-auth'
 
