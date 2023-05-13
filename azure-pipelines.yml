@@ -23,6 +23,26 @@ variables:
 
 
 stages:
+- stage: BuildBE
+  displayName: Build BE
+  jobs:
+  - job: Build_WAR
+    displayName: Build WAR file
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Maven@4
+      displayName: 'Build WAR file'
+      inputs:
+        mavenPomFile: '$(Build.SourcesDirectory)/BE/pom.xml'
+        goals: 'clean package'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
 - stage: Build
   displayName: Build stage
   jobs:
@@ -38,7 +58,6 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        buildContext: $(Build.SourcesDirectory)/FE
         tags: |
           $(tag)
 
@@ -71,7 +90,7 @@ stages:
             inputs:
               action: deploy
               manifests: |
-                $(Pipeline.Workspace)/manifests/bpfe.yml
+                $(Pipeline.Workspace)/manifests/bpbe.yaml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
