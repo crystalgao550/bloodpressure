@@ -2,10 +2,10 @@
 	"development": {
         "config_id": "development",
         "app_name": "BP Category Calculator",
-        "database": "mongodb://admin:123456@mongo:27017/?authMechanism=DEFAULT",
-		"database_name": "bpdb",
-		"database_collection": "bpdb",
-		"webservice": "http://bp-fe:8080/BPRestWS-1.0-SNAPSHOT/retrieve/bp/getJson/", 
+        "database": "mongodb+srv://dbUser:dbUserPassword:27017/?authMechanism=DEFAULT",
+		"database_name": "mongodb",
+		"database_collection": "customers",
+		"webservice": "http://bp-service:8080/BPRestWS-1.0-SNAPSHOT/retrieve/bp/getJson/", 
 		"exposedPort": "22137"
 	}
 }
