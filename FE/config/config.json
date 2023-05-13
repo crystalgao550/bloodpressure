@@ -5,7 +5,7 @@
         "database": "mongodb://admin:123456@10.0.132.51:27017/?authMechanism=DEFAULT",
 		"database_name": "mydb",
 		"database_collection": "customers",
-		"webservice": "http://20.82.44.237:22137/BPRestWS-1.0-SNAPSHOT/retrieve/bp/getJson/", 
+		"webservice": "http://20.82.44.237:8080/BPRestWS-1.0-SNAPSHOT/retrieve/bp/getJson/", 
 		"exposedPort": "22137"
 	}
 }
