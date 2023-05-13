@@ -8,7 +8,7 @@ trigger:
       - main
     paths:
       include:
-      - EAD-CA/BE/*
+      - EAD/BE/*
       - manifests/bpbe.yaml
 
 resources:
