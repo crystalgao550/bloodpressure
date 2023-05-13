@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: bpfe 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bpfe
+  template:
+    metadata:
+      labels:
+        app: bpfe 
+    spec:
+      containers:
+        - name: bpfe 
+          image: bpacregistry.azurecr.io/bpfe
+          ports:
+          - containerPort: 80
