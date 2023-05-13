@@ -9,7 +9,7 @@ trigger:
     paths:
       include:
       - EAD/BE/*
-      - manifests/bpbe.yaml
+      - EAD/manifests/bpbe.yaml
 
 resources:
 - repo: self
