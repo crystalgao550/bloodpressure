@@ -29,26 +29,14 @@ variables:
 
 
 stages:
-- stage: BuildBE
-  displayName: Build BE
+- stage: BuildFE
+  displayName: Build FE
   jobs:
-  - job: Build_WAR
-    displayName: Build WAR file
+  - job: Build
+    displayName: Build
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: Maven@4
-      displayName: 'Build WAR file'
-      inputs:
-        mavenPomFile: '$(Build.SourcesDirectory)/BE/pom.xml'
-        goals: 'clean package'
-        publishJUnitResults: true
-        testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        javaHomeOption: 'JDKVersion'
-        mavenVersionOption: 'Default'
-        mavenAuthenticateFeed: false
-        effectivePomSkip: false
-        sonarQubeRunAnalysis: false
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
@@ -56,6 +44,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
+        buildContext: $(Build.SourcesDirectory)/FE
         tags: |
           $(tag)
 
