@@ -44,7 +44,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        buildContext: $(Build.SourcesDirectory)/FE
+        buildContext: $(Build.SourcesDirectory)/EAD
         tags: |
           $(tag)
 
