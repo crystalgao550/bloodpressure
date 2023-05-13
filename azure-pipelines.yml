@@ -12,7 +12,7 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'a9348dcc-8123-41cb-af8d-500e3667eae4'
-  imageRepository: 'bpfe'
+  imageRepository: 'bpbe'
   containerRegistry: 'bpacregistry.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
@@ -29,7 +29,7 @@ stages:
   - job: Build_WAR
     displayName: Build WAR file
     pool:
-      vmImage: ubuntu-latest
+      vmImage: $(vmImageName)
     steps:
     - task: Maven@4
       displayName: 'Build WAR file'
