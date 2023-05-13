@@ -20,7 +20,7 @@ variables:
   dockerRegistryServiceConnection: '79cfec80-d1d1-469e-b5ef-ee8ab0cf7b62'
   imageRepository: 'bpfe'
   containerRegistry: 'bpacregistry.azurecr.io'
-  dockerfilePath: 'EAD/FE/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/FE/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'bpacregistry1102425c-auth'
 
