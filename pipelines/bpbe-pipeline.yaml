@@ -8,7 +8,7 @@ trigger:
       - main
     paths:
       include:
-      - EAD/BE/*
+      - ../BE/*
       - EAD/manifests/bpbe.yaml
       - EAD/pipelines/bpbe-pipeline.yaml
 
