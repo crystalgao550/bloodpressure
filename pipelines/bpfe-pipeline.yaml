@@ -8,9 +8,9 @@ trigger:
       - main
     paths:
       include:
-      - EAD/FE/*
-      - EAD/manifests/bpfe.yaml
-      - EAD/pipelines/bpfe-pipeline.yaml
+      - FE/*
+      - manifests/bpfe.yaml
+      - pipelines/bpfe-pipeline.yaml
 
 resources:
 - repo: self
