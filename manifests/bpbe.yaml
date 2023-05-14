@@ -20,8 +20,7 @@ spec:
       # pod contains 1 container
       containers:
       - name: bp
-        image: bpacregistry.azurecr.io/saturdaystar/bpbe:66
-        imagePullPolicy: "IfNotPresent"
+        image: bpacregistry.azurecr.io/saturdaystar/bpbe:68
         # container opens port 8080
         ports:
         - containerPort: 8080
@@ -29,7 +28,13 @@ spec:
           protocol: TCP 
         - containerPort: 4848
           name: http2
-          protocol: TCP                       
+          protocol: TCP
+        env:
+          - name: databaseUrl
+            valueFrom:
+                configMapKeyRef:
+                  name: mongo-configmap
+                  key: connection_string                       
 ---
 apiVersion: v1
 kind: Service

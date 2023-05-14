@@ -20,13 +20,18 @@ spec:
       # pod contains 1 container
       containers:
       - name: node
-        image: bpacregistry.azurecr.io/bpfe:74
-        imagePullPolicy: "IfNotPresent"
+        image: bpacregistry.azurecr.io/bpfe:75
         # container opens port 22137
         ports:
         - containerPort: 22137
           name: http
           protocol: TCP
+        env:
+          - name: BPUrl
+            valueFrom:
+                configMapKeyRef:
+                  name: bp-configmap
+                  key: bp_url
       imagePullSecrets:
       - name: acr-secret                             
 ---
