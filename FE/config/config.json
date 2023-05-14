@@ -2,7 +2,7 @@
 	"development": {
         "config_id": "development",
         "app_name": "BP Category Calculator",
-        "database": "mongodb://admin:123456@mongo-service:27017/?authMechanism=DEFAULT",
+        "database": "mongodb://admin:123456@10.244.0.29:27017/?authMechanism=DEFAULT",
 		"database_name": "mydb",
 		"database_collection": "customers",
 		"webservice": "http://20.82.31.119:8080/BPRestWS-1.0-SNAPSHOT/retrieve/bp/getJson/", 
