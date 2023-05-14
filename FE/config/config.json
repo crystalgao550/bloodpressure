@@ -2,7 +2,7 @@
 	"development": {
         "config_id": "development",
         "app_name": "BP Category Calculator",
-        "database": "mongodb+srv://dbUser:dbUserPassword@bpcalculator-tftko.azure.mongodb.net/test?retryWrites=true",
+        "database": "mongodb://username:password@mongo-service:27017/?authMechanism=DEFAULT",
 		"database_name": "mongodb",
 		"database_collection": "customers",
 		"webservice": "http://bp-service:8080/BPRestWS-1.0-SNAPSHOT/retrieve/bp/getJson/", 
