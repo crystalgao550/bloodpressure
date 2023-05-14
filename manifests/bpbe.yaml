@@ -20,7 +20,7 @@ spec:
       # pod contains 1 container
       containers:
       - name: bp
-        image: bpacregistry.azurecr.io/bpbe:v1
+        image: bpacregistry.azurecr.io/saturdaystar/bpbe:66
         imagePullPolicy: "IfNotPresent"
         # container opens port 8080
         ports:
