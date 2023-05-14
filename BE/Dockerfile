@@ -1,4 +1,4 @@
-FROM payara/server-full:5.2022.5
+FROM payara/micro:5.2022.2-jdk11
 
 # the Payara Micro Docker image provides a directory 
 # from which applications will be deployed on startup
