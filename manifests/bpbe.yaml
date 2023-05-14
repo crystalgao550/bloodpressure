@@ -20,7 +20,7 @@ spec:
       # pod contains 1 container
       containers:
       - name: bp
-        image: bpacregistry.azurecr.io/saturdaystar/bpbe:80
+        image: bpacregistry.azurecr.io/saturdaystar/bpbe:81
         # container opens port 8080
         ports:
         - containerPort: 8080
