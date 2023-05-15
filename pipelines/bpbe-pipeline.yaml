@@ -38,7 +38,14 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-       
+    - task: SonarCloudPrepare@1
+      inputs:
+        SonarCloud: 'Sonar Cloud'
+        organization: 'x00193215'
+        scannerMode: 'MSBuild'
+        projectKey: 'c4d41161639f84eea75efda98777e03b5175aeab'
+        projectName: 'EAD'
+
     - task: Maven@4
       displayName: 'Build WAR file'
       inputs:
