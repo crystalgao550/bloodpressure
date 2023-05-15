@@ -40,7 +40,7 @@ stages:
     steps:
      
     - task: SonarCloudPrepare@1
-     inputs:
+      inputs:
        SonarCloud: 'Sonar Cloud'
        organization: 'x00193215'
        scannerMode: 'MSBuild'
