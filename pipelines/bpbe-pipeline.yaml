@@ -58,8 +58,9 @@ stages:
         mavenVersionOption: 'Default'
         mavenAuthenticateFeed: false
         effectivePomSkip: false
-        sonarQubeRunAnalysis: true
-        sqMavenPluginVersionChoice: 'latest'
+        sonarQubeRunAnalysis: false
+         
+    - task: SonarCloudAnalyze@1
           
     - task: Docker@2
       displayName: Build and push an image to container registry
