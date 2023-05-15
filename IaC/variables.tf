@@ -1,6 +1,12 @@
-variable client_id {}
-variable client_secret {}
-variable ssh_public_key {}
+variable client_id {
+  default = ""
+}
+variable client_secret {
+  default = ""
+}
+variable ssh_public_key {
+  default = "~/.ssh/TU_rsa.pub"
+}
 
 variable environment {
     default = "dev"
@@ -19,7 +25,7 @@ variable dns_prefix {
 }
 
 variable cluster_name {
-  default = "k8stest"
+  default = "k8stestEAD"
 }
 
 variable resource_group {
