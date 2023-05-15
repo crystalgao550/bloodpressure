@@ -38,6 +38,15 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+     
+    - task: SonarCloudPrepare@1
+      inputs:
+       SonarCloud: 'Sonar Cloud'
+       organization: 'x00193215'
+       scannerMode: 'MSBuild'
+       projectKey: 'a996b52fa1943acb1964b9b0cb156aba631d4c33'
+       projectName: 'EAD'
+       
     - task: Maven@4
       displayName: 'Build WAR file'
       inputs:
@@ -49,7 +58,9 @@ stages:
         mavenVersionOption: 'Default'
         mavenAuthenticateFeed: false
         effectivePomSkip: false
-        sonarQubeRunAnalysis: false
+        sonarQubeRunAnalysis: true
+        sqMavenPluginVersionChoice: 'latest'
+          
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
