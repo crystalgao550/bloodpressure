@@ -51,6 +51,8 @@ stages:
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
         checkStyleRunAnalysis: true
+        pmdRunAnalysis: true
+        findBugsRunAnalysis: true
           
     - task: Docker@2
       displayName: Build and push an image to container registry
