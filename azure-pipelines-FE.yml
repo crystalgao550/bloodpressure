@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: 'b3e3f5b0-b838-4757-87a3-0318b152318c'
   imageRepository: 'crystalgaobloodpressure'
   containerRegistry: 'aksdevopsacrbp1353.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/FE/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'aksdevopsacrbp13535904fad2-auth'
 
