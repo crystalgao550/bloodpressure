@@ -23,7 +23,7 @@ variables:
   containerRegistry: 'bpacregistry.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'bpacregistry6600aec6-auth'
+  imagePullSecret: 'bpacre
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
