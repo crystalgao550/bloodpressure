@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: crystalgaobloodpressure 
-          image: aksdevopsacrbp1353.azurecr.io/crystalgaobloodpressure:34
+          image: aksdevopsacrbp1353.azurecr.io/crystalgaobloodpressure:36
           ports:
           - containerPort: 22137
 
