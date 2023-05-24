@@ -23,30 +23,46 @@ variables:
 
 
 stages:
-- stage: Build
-  displayName: Build stage
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: $(vmImageName)
-    steps:
-    - task: Docker@2
-      displayName: Build and push an image to container registry
-      inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+  - stage: BuildBE
+    displayName: Build BE
+    jobs:
+      - job: Build_WAR
+        displayName: Build WAR file
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: Maven@4
+            displayName: 'Build WAR file'
+            inputs:
+              mavenPomFile: '$(Build.SourcesDirectory)/BE/pom.xml'
+              goals: 'clean package'
+              publishJUnitResults: true
+              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+              javaHomeOption: 'JDKVersion'
+              mavenVersionOption: 'Default'
+              mavenAuthenticateFeed: false
+              effectivePomSkip: false
+              sonarQubeRunAnalysis: false
+              checkStyleRunAnalysis: true
+              pmdRunAnalysis: true
+              findBugsRunAnalysis: true
 
-    - upload: manifests
-      artifact: manifests
+          - task: Docker@2
+            displayName: Build and push an image to container registry
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository)
+              dockerfile: $(dockerfilePath)
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+
+      - upload: manifests
+        artifact: manifests
 
 - stage: Deploy
   displayName: Deploy stage
-  dependsOn: Build
+  dependsOn: BuildBE
 
   jobs:
   - deployment: Deploy
