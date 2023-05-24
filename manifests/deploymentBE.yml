@@ -1,20 +1,20 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: crystalgaobloodpressureBEk8s
+  name: be
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: crystalgaobloodpressureBE
+      app: be
   template:
     metadata:
       labels:
-        app: crystalgaobloodpressureBE
+        app: be
     spec:
       containers:
         - name: crystalgaobloodpressure 
-          image: aksdevopsacrbp1353.azurecr.io/crystalgaobloodpressurebe:33
+          image: aksdevopsacrbp1353.azurecr.io/crystalgaobloodpressurebe:35
           ports:
           - containerPort: 8080
 
