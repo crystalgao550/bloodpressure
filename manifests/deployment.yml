@@ -14,7 +14,13 @@ spec:
     spec:
       containers:
         - name: crystalgaobloodpressure 
-          image: aksdevopsacrbp1353.azurecr.io/crystalgaobloodpressure:36
+          image: aksdevopsacrbp1353.azurecr.io/crystalgaobloodpressure:38
           ports:
           - containerPort: 22137
+          env:
+            - name: BPUrl
+              valueFrom:
+                configMapKeyRef:
+                  name: bp-configmap
+                  key: bp_url
 
