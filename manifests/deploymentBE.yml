@@ -17,10 +17,3 @@ spec:
           image: aksdevopsacrbp1353.azurecr.io/crystalgaobloodpressurebe:39
           ports:
           - containerPort: 8080
-
-          env:
-            - name: databaseUrl
-              valueFrom:
-                configMapKeyRef:
-                  name: mongo-configmap
-                  key: connection_string
