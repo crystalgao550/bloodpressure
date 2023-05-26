@@ -5,7 +5,7 @@
         "database": "mongodb+srv://dbUser:dbUserPassword@bpcalculator-tftko.azure.mongodb.net/test?retryWrites=true",
 		"database_name": "mongodb",
 		"database_collection": "customers",
-		"webservice": "http://bp-service:8080/BPRestWS-1.0-SNAPSHOT/retrieve/bp/getJson/",
+		"webservice": "http://be.default.svc:8080/BPRestWS-1.0-SNAPSHOT/retrieve/bp/getJson/",
 		"exposedPort": "22137"
 	}
 }
