@@ -1,18 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="BPRestWS" />
-      </profile>
-    </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="BPRestWS" options="-endorseddirs $PROJECT_DIR$/BE/target/endorsed" />
-    </option>
-  </component>
-</project>
+version https://git-lfs.github.com/spec/v1
+oid sha256:43b81b689d87d750ce060c979853fad6fb258226e4826723ba0dc21260c679a2
+size 822

@@ -1,20 +1,3 @@
-apiVersion : apps/v1
-kind: Deployment
-metadata:
-  name: crystalgaobloodpressure 
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: crystalgaobloodpressure
-  template:
-    metadata:
-      labels:
-        app: crystalgaobloodpressure 
-    spec:
-      containers:
-        - name: crystalgaobloodpressure 
-          image: aksdevopsacrbp1353.azurecr.io/crystalgaobloodpressure:34
-          ports:
-          - containerPort: 22137
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:b15baa96925dfc61600e44f5b1d53897b7414eda960fed156699cc8e338d3b9d
+size 457
